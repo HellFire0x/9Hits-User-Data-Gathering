@@ -87,23 +87,23 @@ namespace ConsoleApplication3
                     }
                     default:
                     {
-                        Console.WriteLine($"IP:{IpAddress()}");
-                        Console.WriteLine($"Live Exchange:{GetLiveExchange()}");
-                        Console.WriteLine($"Users:{GetUsers()}");
-                        Console.WriteLine($"Sites:{GetSites()}");
-                        Console.WriteLine($"Username:{hitsData["data"]?["username"]}");
-                        Console.WriteLine($"Email:{hitsData["data"]?["email"]}");
-                        Console.WriteLine($"Joined:{hitsData["data"]?["joined"]}");
-                        Console.WriteLine($"Token:{hitsData["data"]?["token"]}");
-                        Console.WriteLine($"Funds:{hitsData["data"]?["funds"]}");
+                        Console.WriteLine($"IP: {IpAddress()}");
+                        Console.WriteLine($"Live Exchange: {long.Parse(GetLiveExchange()):n}");
+                        Console.WriteLine($"Users: {long.Parse(GetUsers()):n}");
+                        Console.WriteLine($"Sites: {long.Parse(GetSites()):n}");
+                        Console.WriteLine($"Username: {hitsData["data"]?["username"]}");
+                        Console.WriteLine($"Email: {hitsData["data"]?["email"]}");
+                        Console.WriteLine($"Joined: {hitsData["data"]?["joined"]}");
+                        Console.WriteLine($"Token: {hitsData["data"]?["token"]}");
+                        Console.WriteLine($"Funds: {hitsData["data"]?["funds"]}");
                         Console.WriteLine("Slots:");
-                        Console.WriteLine($"    [+] - Used:{hitsData["data"]?["slots"]?["used"]}");
-                        Console.WriteLine($"    [+] - Available:{hitsData["data"]?["slots"]?["available"]}");
-                        Console.WriteLine($"Points:{hitsData["data"]?["points"]}");
-                        Console.WriteLine($"Membership:{hitsData["data"]?["membership"]}");
+                        Console.WriteLine($"    [+] - Used: {hitsData["data"]?["slots"]?["used"]}");
+                        Console.WriteLine($"    [+] - Available: {hitsData["data"]?["slots"]?["available"]}");
+                        Console.WriteLine($"Points: {hitsData["data"]?["points"]}");
+                        Console.WriteLine($"Membership: {hitsData["data"]?["membership"]}");
                         Console.WriteLine(hitsData["messages"]?.ToString() == string.Empty
-                            ? "Message:No messages"
-                            : $"Message:{Format(hitsData["messages"]?.ToString())}");
+                            ? "Message: No messages"
+                            : $"Message: {Format(hitsData["messages"]?.ToString())}");
                         Console.ReadKey();
                         break;
                     }
