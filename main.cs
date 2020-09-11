@@ -6,7 +6,7 @@ namespace ConsoleApplication3
 {
     internal static class Program
     {
-        private static string Key { get; set; } = "3499f18e88ef44ec0eb25c529846e098";
+        private static string Key { get; set; } = "";
 
         // private static string Format(string message)
         // {
