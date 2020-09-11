@@ -14,30 +14,19 @@ namespace ConsoleApplication3
         //     return message?.Replace("[", null)?.Replace("]", null)?.Replace("\"", null)?.Replace(" ", null);
         // }
 
-        private static string IpAddress()
-        {
-            return JObject.Parse(new WebClient().DownloadString("https://api.ipify.org/?format=json"))["ip"]
+        private static string IpAddress() =>
+            JObject.Parse(new WebClient().DownloadString("https://api.ipify.org/?format=json"))["ip"]
                 ?.ToString();
-        }
 
-        private static string GetLiveExchange()
-        {
-            return new WebClient().DownloadString("https://9hits.com/ajax.html?type=hits").Substring(8);
-        }
+        private static string GetLiveExchange() => new WebClient().DownloadString("https://9hits.com/ajax.html?type=hits").Substring(8);
 
-        private static string GetUsers()
-        {
-            return new WebClient().DownloadString("https://9hits.com/ajax.html?type=users");
-        }
+        private static string GetUsers() => new WebClient().DownloadString("https://9hits.com/ajax.html?type=users");
 
-        private static string GetSites()
-        {
-            return new WebClient().DownloadString("https://9hits.com/ajax.html?type=sites");
-        }
+        private static string GetSites() => new WebClient().DownloadString("https://9hits.com/ajax.html?type=sites");
 
         public static void Main()
         {
-            if (Key == string.Empty)
+            if (Key != null && Key == string.Empty)
             {
                 Console.Write("Enter Key:");
                 Key = Console.ReadLine();
@@ -45,8 +34,7 @@ namespace ConsoleApplication3
 
             using (var webClient = new WebClient())
             {
-                var hitsData =
-                    JObject.Parse(webClient.DownloadString($"https://panel.9hits.com/api/profileGet?key={Key}"));
+                var hitsData = JObject.Parse(webClient.DownloadString($"https://panel.9hits.com/api/profileGet?key={Key}"));
 
                 switch (hitsData["status"]?.ToString())
                 {
