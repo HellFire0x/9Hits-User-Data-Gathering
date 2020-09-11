@@ -7,12 +7,12 @@ namespace ConsoleApplication3
     internal static class Program
     {
         /// <summary>
-        /// Key Data
+        ///     Key Data
         /// </summary>
         private static string Key { get; set; } = "";
 
         /// <summary>
-        /// Format Message/data
+        ///     Format Message/data
         /// </summary>
         /// <param name="message">Where the message goes to format</param>
         /// <returns>Return the formatted data message</returns>
@@ -24,34 +24,44 @@ namespace ConsoleApplication3
         }
 
         /// <summary>
-        ///  Get IP Address
+        ///     Get IP Address
         /// </summary>
         /// <returns>Your public ip address</returns>
-        private static string IpAddress() =>
-            JObject.Parse(new WebClient().DownloadString("https://api.ipify.org/?format=json"))["ip"]
+        private static string IpAddress()
+        {
+            return JObject.Parse(new WebClient().DownloadString("https://api.ipify.org/?format=json"))["ip"]
                 ?.ToString();
+        }
 
         /// <summary>
-        /// Get Live Exchange
+        ///     Get Live Exchange
         /// </summary>
         /// <returns>Hits Data the live currency points</returns>
-        private static string GetLiveExchange() =>
-            new WebClient().DownloadString("https://9hits.com/ajax.html?type=hits").Substring(8);
+        private static string GetLiveExchange()
+        {
+            return new WebClient().DownloadString("https://9hits.com/ajax.html?type=hits").Substring(8);
+        }
 
         /// <summary>
-        /// Get Users Data
+        ///     Get Users Data
         /// </summary>
         /// <returns>User Data how many user are using the website</returns>
-        private static string GetUsers() => new WebClient().DownloadString("https://9hits.com/ajax.html?type=users");
+        private static string GetUsers()
+        {
+            return new WebClient().DownloadString("https://9hits.com/ajax.html?type=users");
+        }
 
         /// <summary>
-        /// Get Sites Data
+        ///     Get Sites Data
         /// </summary>
         /// <returns>How many sites are on this website</returns>
-        private static string GetSites() => new WebClient().DownloadString("https://9hits.com/ajax.html?type=sites");
+        private static string GetSites()
+        {
+            return new WebClient().DownloadString("https://9hits.com/ajax.html?type=sites");
+        }
 
         /// <summary>
-        /// this is where the stuff starts the interesting stuff :)
+        ///     this is where the stuff starts the interesting stuff :)
         /// </summary>
         public static void Main()
         {
@@ -92,7 +102,7 @@ namespace ConsoleApplication3
                         Console.WriteLine($"Points:{hitsData["data"]?["points"]}");
                         Console.WriteLine($"Membership:{hitsData["data"]?["membership"]}");
                         Console.WriteLine(hitsData["messages"]?.ToString() == string.Empty
-                            ? $"Message:No messages"
+                            ? "Message:No messages"
                             : $"Message:{Format(hitsData["messages"]?.ToString())}");
                         Console.ReadKey();
                         break;
