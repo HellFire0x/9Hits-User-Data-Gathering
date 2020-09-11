@@ -97,8 +97,8 @@ namespace ConsoleApplication3
                         Console.WriteLine($"Token:{hitsData["data"]?["token"]}");
                         Console.WriteLine($"Funds:{hitsData["data"]?["funds"]}");
                         Console.WriteLine("Slots:");
-                        Console.WriteLine($"    Used:{hitsData["data"]?["slots"]?["used"]}");
-                        Console.WriteLine($"    Available:{hitsData["data"]?["slots"]?["available"]}");
+                        Console.WriteLine($"    [+] - Used:{hitsData["data"]?["slots"]?["used"]}");
+                        Console.WriteLine($"    [+] - Available:{hitsData["data"]?["slots"]?["available"]}");
                         Console.WriteLine($"Points:{hitsData["data"]?["points"]}");
                         Console.WriteLine($"Membership:{hitsData["data"]?["membership"]}");
                         Console.WriteLine(hitsData["messages"]?.ToString() == string.Empty
