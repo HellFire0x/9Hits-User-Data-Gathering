@@ -1,5 +1,9 @@
 # 9Hits-User-Data-Gathering
 
+### What is 9Hits User Data Gathering
+This application is made for 9hits to get information about your account with the API key. It gets data for a low amount of requests. It gets information such as IP, Live Data, Total Users, Total Sites, Username, Email, Date joined, Token, Funds, Slots, Points, MemberShip, and Messages. This application is not going to be updated. It is discontinued. I may make another version of this later.
+
+
 ![Image of Newtonsoft](https://www.newtonsoft.com/content/images/twitterlogo.png)
 [Dont forget to download Newtonsoft](https://www.newtonsoft.com)
 
